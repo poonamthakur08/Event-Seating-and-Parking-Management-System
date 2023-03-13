@@ -1,0 +1,3073 @@
+﻿DROP DATABASE if exists event_management;
+CREATE DATABASE event_management;
+USE event_management;
+
+
+CREATE TABLE if not exists organizer(
+        organizer_id VARCHAR(100),
+        first_name VARCHAR(100),
+        last_name VARCHAR(100),
+        email_id VARCHAR(100),
+        primary key(organizer_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO organizer(organizer_id, first_name, last_name, email_id)
+VALUES
+(
+'48-8667073', 'Lydie', 'Raiker', 'lraiker0@kickstarter.com'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO organizer(organizer_id, first_name, last_name, email_id)
+VALUES
+(
+'28-1039233', 'Guinna', 'Phillpot', 'gphillpot1@typepad.com'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO organizer(organizer_id, first_name, last_name, email_id)
+VALUES
+(
+'96-2852689', 'Dwayne', 'O\'Hern', 'dohern2@theatlantic.com'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO organizer(organizer_id, first_name, last_name, email_id)
+VALUES
+(
+'40-1122144', 'Nara', 'Burnham', 'nburnham3@shareasale.com'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO organizer(organizer_id, first_name, last_name, email_id)
+VALUES
+(
+'01-8873322', 'Burt', 'Ingerith', 'bingerith4@techcrunch.com'
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO organizer(organizer_id, first_name, last_name, email_id)
+VALUES
+(
+'78-7685678', 'Yvor', 'O\'Hartigan', 'yohartigan5@europa.eu'
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO organizer(organizer_id, first_name, last_name, email_id)
+VALUES
+(
+'24-1222829', 'Ynes', 'Loos', 'yloos6@senate.gov'
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO organizer(organizer_id, first_name, last_name, email_id)
+VALUES
+(
+'48-9016577', 'Lorenzo', 'Fearne', 'lfearne7@disqus.com'
+);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO organizer(organizer_id, first_name, last_name, email_id)
+VALUES
+(
+'30-7086556', 'Shalna', 'Dauncey', 'sdauncey8@reverbnation.com'
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO organizer(organizer_id, first_name, last_name, email_id)
+VALUES
+(
+'28-5672878', 'Rosalind', 'Daffey', 'rdaffey9@sourceforge.net'
+);
+
+
+
+
+CREATE TABLE if not exists organizer_contact_info(
+organizer_id VARCHAR(100),
+contact_number VARCHAR(100),
+foreign key (organizer_id) REFERENCES organizer(organizer_id),
+primary key (organizer_id, contact_number)
+);
+
+
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'48-8667073', '650-516-0828'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'48-8667073', '100-430-7544'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'48-8667073', '540-810-0545'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'28-1039233', '180-940-8092'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'28-1039233', '778-464-3546'
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'96-2852689', '821-647-0692'
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'96-2852689', '462-222-0674'
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'40-1122144', '987-437-2036'
+);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'40-1122144', '992-668-8207'
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'01-8873322', '624-816-2145'
+);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'78-7685678', '943-441-6066'
+);
+
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'24-1222829', '378-614-1710'
+);
+
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'48-9016577', '579-802-9913'
+);
+
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'30-7086556', '709-859-8276'
+);
+
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO organizer_contact_info(organizer_id, contact_number)
+VALUES
+(
+'28-5672878', '674-512-0341'
+);
+
+
+
+
+
+
+CREATE TABLE customer(
+user_id VARCHAR(100),
+first_name VARCHAR(100),
+last_name VARCHAR(100),
+email_id VARCHAR(100),
+dob date,
+primary key (user_id)
+);
+
+
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'CXN9692', 'Truman', 'Micallef', 'tmicallef0@upenn.edu', Date('1993/7/20')
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'QXP4856', 'Audra', 'Langhorne', 'alanghorne1@mail.ru', Date('1987/2/10')
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'GZL4416', 'Rosalia', 'Mattek', 'rmattek2@dion.ne.jp', Date('1996/3/10')
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'QEK5997', 'Joelie', 'Rollason', 'jrollason3@yahoo.co.jp', Date('2004/10/2')
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'CWT5625', 'Yvor', 'Iacovolo', 'yiacovolo4@multiply.com', Date('1984/5/11')
+);
+
+
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'DSO2040', 'Murry', 'Carnilian', 'mcarnilian5@unblog.fr', Date('2005/10/21')
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'AHC8371', 'Karyl', 'Kibbe', 'kkibbe6@i2i.jp', Date('2000/9/12')
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'AFV8578', 'Neron', 'Dansken', 'ndansken7@google.com.br', Date('1985/7/20')
+);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'KWC4378', 'Marylin', 'Forsaith', 'mforsaith8@blinklist.com', Date('1985/8/16')
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'IXJ0828', 'Kristofor', 'Corstan', 'kcorstan9@naver.com', Date('1993/4/30')
+);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'HUL8501', 'Nedda', 'Dumpleton', 'ndumpletona@phpbb.com', Date('1996/8/16')
+);
+
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'BIZ8809', 'Karel', 'Rabbatts', 'krabbattsb@smh.com.au', Date('1997/11/19')
+);
+
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'JUM5377', 'Tadeas', 'Burkert', 'tburkertc@elpais.com', Date('1985/4/23')
+);
+
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'RPO6791', 'Alon', 'Danks', 'adanksd@homestead.com', Date('1991/11/28')
+);
+
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'BXX9618', 'Nicolea', 'Pynner', 'npynnere@cbc.ca', Date('1984/6/22')
+);
+
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'CWE5753', 'Pall', 'Dillingston', 'pdillingstonf@squidoo.com', Date('1995/6/11')
+);
+
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'FPZ4893', 'Kevan', 'Jaulmes', 'kjaulmesg@stumbleupon.com', Date('1993/9/30')
+);
+
+
+/* INSERT QUERY NO: 18 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'JDM4520', 'Noby', 'Cronkshaw', 'ncronkshawh@admin.ch', Date('1988/3/15')
+);
+
+
+/* INSERT QUERY NO: 19 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'APX4012', 'Sig', 'McKinnon', 'smckinnoni@quantcast.com', Date('1982/12/4')
+);
+
+
+/* INSERT QUERY NO: 20 */
+INSERT INTO customer(user_id, first_name, last_name, email_id, dob)
+VALUES
+(
+'QCL2405', 'Oswald', 'Morhall', 'omorhallj@indiegogo.com', Date('1984/2/1')
+);
+
+
+
+
+
+
+
+
+CREATE TABLE if not exists customer_contact_info(
+user_id VARCHAR(100),
+contact_number VARCHAR(100),
+foreign key (user_id) REFERENCES customer(user_id),
+primary key (user_id, contact_number)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'CXN9692', '873-223-9349'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'CXN9692', '224-733-6128'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'QXP4856', '802-274-9474'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'QXP4856', '286-964-7307'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'QXP4856', '742-713-6019'
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'GZL4416', '447-446-2132'
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'GZL4416', '287-917-6394'
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'QEK5997', '961-650-5199'
+);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'CWT5625', '778-562-9846'
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'DSO2040', '302-133-4732'
+);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'DSO2040', '873-784-1332'
+);
+
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'DSO2040', '414-174-0309'
+);
+
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'AHC8371', '661-698-0517'
+);
+
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'AFV8578', '905-486-0453'
+);
+
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'KWC4378', '866-485-4948'
+);
+
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'IXJ0828', '137-614-8030'
+);
+
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'HUL8501', '188-944-5054'
+);
+
+
+/* INSERT QUERY NO: 18 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'BIZ8809', '851-597-3145'
+);
+
+
+/* INSERT QUERY NO: 19 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'JUM5377', '407-931-2208'
+);
+
+
+/* INSERT QUERY NO: 20 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'RPO6791', '616-188-8667'
+);
+
+
+/* INSERT QUERY NO: 21 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'BXX9618', '545-253-9984'
+);
+
+
+/* INSERT QUERY NO: 22 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'CWE5753', '548-837-0803'
+);
+
+
+/* INSERT QUERY NO: 23 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'CWE5753', '623-193-5517'
+);
+
+
+/* INSERT QUERY NO: 24 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'FPZ4893', '115-819-6618'
+);
+
+
+/* INSERT QUERY NO: 25 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'FPZ4893', '727-396-5538'
+);
+
+
+/* INSERT QUERY NO: 26 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'JDM4520', '887-632-3513'
+);
+
+
+/* INSERT QUERY NO: 27 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'JDM4520', '215-152-8688'
+);
+
+
+/* INSERT QUERY NO: 28 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'APX4012', '392-933-9336'
+);
+
+
+/* INSERT QUERY NO: 29 */
+INSERT INTO customer_contact_info(user_id, contact_number)
+VALUES
+(
+'QCL2405', '978-406-2208'
+);
+
+
+
+
+CREATE TABLE if not exists event(
+event_id VARCHAR(100),
+name VARCHAR(100),
+primary key (event_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO event(event_id, name)
+VALUES
+(
+'BD5694', 'LungHwa Uni VS Islamic Azad Uni'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO event(event_id, name)
+VALUES
+(
+'BI3535', 'Georgia College & State Uni VS UniversitÃ© du QuÃ©bec Ã MontrÃ©al'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO event(event_id, name)
+VALUES
+(
+'SN7277', 'Institute of Space Technology VS Institut Textile et Chimique de Lyon'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO event(event_id, name)
+VALUES
+(
+'PK0796', 'Beni Suef Uni VS Kanto Gakuin Uni'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO event(event_id, name)
+VALUES
+(
+'BT3882', 'University of QuÃ©bec VS Universidad TecnolÃ³gica de El Salvador'
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO event(event_id, name)
+VALUES
+(
+'FP5553', 'Kordula Glassborow Concert'
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO event(event_id, name)
+VALUES
+(
+'RQ6348', 'Garrett Duggen Concert'
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO event(event_id, name)
+VALUES
+(
+'MP4429', 'Melessa Ritchie Concert'
+);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO event(event_id, name)
+VALUES
+(
+'WZ9924', 'Nedda Ottery Concert'
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO event(event_id, name)
+VALUES
+(
+'LQ1929', 'Petronella Antonovic Concert'
+);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO event(event_id, name)
+VALUES
+(
+'PK1234', 'Kanto Gakuin Uni VS Beni Suef Uni'
+);
+
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO event(event_id, name)
+VALUES
+(
+'BD9876', 'Islamic Azad Uni VS LungHwa Uni'
+);
+
+
+CREATE TABLE if not exists artist(
+artist_id VARCHAR(50),
+name VARCHAR(100),
+email_id VARCHAR(100),
+primary key (artist_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO artist(artist_id, name, email_id)
+VALUES
+(
+'AR795', 'Kordula Glassborow', 'kglassborow0@google.com.hk'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO artist(artist_id, name, email_id)
+VALUES
+(
+'AR622', 'Garrett Duggen', 'gduggen1@goo.ne.jp'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO artist(artist_id, name, email_id)
+VALUES
+(
+'AR145', 'Melessa Ritchie', 'mritchie2@istockphoto.com'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO artist(artist_id, name, email_id)
+VALUES
+(
+'AR215', 'Nedda Ottery', 'nottery3@ifeng.com'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO artist(artist_id, name, email_id)
+VALUES
+(
+'AR441', 'Petronella Antonovic', 'pantonovic4@php.net'
+);
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE if not exists event_location(
+location_id VARCHAR(100),
+location_name VARCHAR(100),
+city VARCHAR(100),
+street VARCHAR(100),
+zipcode DOUBLE,
+state CHAR(5),
+primary key (location_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO event_location(location_id, location_name, city, street, zipcode, state)
+VALUES
+(
+'CHJ0116', 'Accord Stadium', 'New Bedford', '3 Shoshone Drive', 2745, 'MA'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO event_location(location_id, location_name, city, street, zipcode, state)
+VALUES
+(
+'MAC6643', 'Panther Field', 'Albany', '320 Gateway Crossing', 12262, 'NY'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO event_location(location_id, location_name, city, street, zipcode, state)
+VALUES
+(
+'IUY0154', 'Timeless Centre', 'Washington', '7564 Namekagon Drive', 20397, 'DC'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO event_location(location_id, location_name, city, street, zipcode, state)
+VALUES
+(
+'GZE8122', 'Hero Bowl', 'Waco', '6 7th Parkway', 76711, 'TX'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO event_location(location_id, location_name, city, street, zipcode, state)
+VALUES
+(
+'ALR6893', 'Legacy Field', 'Pensacola', '83 Lunder Alley', 32590, 'FL'
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO event_location(location_id, location_name, city, street, zipcode, state)
+VALUES
+(
+'FBL8450', 'Tribute Field', 'San Jose', '8 Mallard Way', 95138, 'CA'
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO event_location(location_id, location_name, city, street, zipcode, state)
+VALUES
+(
+'BQR3518', 'Eos Field', 'Houston', '19587 Dahle Place', 77271, 'TX'
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO event_location(location_id, location_name, city, street, zipcode, state)
+VALUES
+(
+'XZZ4063', 'Millennium Centre', 'Boulder', '8 Elka Avenue', 80328, 'CO'
+);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO event_location(location_id, location_name, city, street, zipcode, state)
+VALUES
+(
+'UNK4781', 'Blossom Field', 'Columbus', '54 Mcguire Place', 43268, 'OH'
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO event_location(location_id, location_name, city, street, zipcode, state)
+VALUES
+(
+'FFG0557', 'Compass Ground', 'Pensacola', '3 Trailsway Point', 32590, 'FL'
+);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO event_location(location_id, location_name, city, street, zipcode, state)
+VALUES
+(
+'MES3594', 'Folsom Field', 'Boston', '058 Manufacturers Place', 2298, 'MA'
+);
+
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO event_location(location_id, location_name, city, street, zipcode, state)
+VALUES
+(
+'BFT8701', 'Rockies', 'Norwalk', '0966 Brickson Park Junction', 6859, 'CT'
+);
+
+
+
+
+CREATE TABLE if not exists team(
+team_id VARCHAR(100),
+team_name VARCHAR(100),
+primary key(team_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO team(team_id, team_name)
+VALUES
+(
+'T2853', 'LungHwa University of Science and Technology'
+);
+
+
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO team(team_id, team_name)
+VALUES
+(
+'T4105', 'Georgia College & State University'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO team(team_id, team_name)
+VALUES
+(
+'T9607', 'Institute of Space Technology'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO team(team_id, team_name)
+VALUES
+(
+'T2449', 'Beni Suef University'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO team(team_id, team_name)
+VALUES
+(
+'T7853', 'University of QuÃ©bec'
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO team(team_id, team_name)
+VALUES
+(
+'T6874', '"Islamic Azad University'
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO team(team_id, team_name)
+VALUES
+(
+'T7353', 'UniversitÃ© du QuÃ©bec Ã MontrÃ©al'
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO team(team_id, team_name)
+VALUES
+(
+'T6359', 'Institut Textile et Chimique de Lyon'
+);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO team(team_id, team_name)
+VALUES
+(
+'T3542', 'Kanto Gakuin University'
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO team(team_id, team_name)
+VALUES
+(
+'T4788', 'Universidad TecnolÃ³gica de El Salvador'
+);
+
+
+
+
+CREATE TABLE if not exists concert(
+event_id VARCHAR(100),
+type VARCHAR(100),
+foreign key (event_id) REFERENCES event(event_id),
+primary key (event_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO concert(event_id, type)
+VALUES
+(
+'FP5553', 'Rock'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO concert(event_id, type)
+VALUES
+(
+'RQ6348', 'Rock'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO concert(event_id, type)
+VALUES
+(
+'MP4429', 'Rock'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO concert(event_id, type)
+VALUES
+(
+'WZ9924', 'EDM'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO concert(event_id, type)
+VALUES
+(
+'LQ1929', 'Metal'
+);
+
+
+
+
+CREATE TABLE if not exists event_details(
+organizer_id VARCHAR(100),
+event_id VARCHAR(100),
+is_canceled TINYINT(1),
+foreign key (organizer_id) REFERENCES organizer(organizer_id),
+foreign key (event_id) REFERENCES event(event_id),
+primary key (organizer_id, event_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'48-8667073', 'BD5694', 0
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'48-8667073', 'LQ1929', 0
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'96-2852689', 'BT3882', 0
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'40-1122144', 'BT3882', 0
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'01-8873322', 'BT3882', 0
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'40-1122144', 'BI3535', 0
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'01-8873322', 'SN7277', 0
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'78-7685678', 'PK0796', 0
+);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'24-1222829', 'FP5553', 0
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'48-9016577', 'RQ6348', 1
+);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'30-7086556', 'MP4429', 0
+);
+
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'28-5672878', 'WZ9924', 0
+);
+
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'24-1222829', 'BD9876', 0
+);
+
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO event_details(organizer_id, event_id, is_canceled)
+VALUES
+(
+'30-7086556', 'BD9876', 0
+);
+
+
+CREATE TABLE if not exists concert_details(
+event_id VARCHAR(100),
+artist_id VARCHAR(50),
+foreign key (artist_id) REFERENCES artist(artist_id),
+foreign key (event_id) REFERENCES event(event_id),
+primary key (artist_id, event_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO concert_details(event_id, artist_id)
+VALUES
+(
+'FP5553', 'AR795'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO concert_details(event_id, artist_id)
+VALUES
+(
+'RQ6348', 'AR622'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO concert_details(event_id, artist_id)
+VALUES
+(
+'MP4429', 'AR145'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO concert_details(event_id, artist_id)
+VALUES
+(
+'WZ9924', 'AR215'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO concert_details(event_id, artist_id)
+VALUES
+(
+'LQ1929', 'AR441'
+);
+
+
+
+
+CREATE TABLE if not exists game(
+event_id VARCHAR(100),
+home_team_id VARCHAR(100),
+away_team_id VARCHAR(100),
+foreign key(event_id) REFERENCES event (event_id),
+foreign key(home_team_id) REFERENCES team (team_id),
+foreign key(away_team_id) REFERENCES team (team_id),
+primary key (event_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO game(event_id, home_team_id, away_team_id)
+VALUES
+(
+'BD5694', 'T2853', 'T6874'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO game(event_id, home_team_id, away_team_id)
+VALUES
+(
+'BI3535', 'T4105', 'T7353'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO game(event_id, home_team_id, away_team_id)
+VALUES
+(
+'SN7277', 'T9607', 'T6359'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO game(event_id, home_team_id, away_team_id)
+VALUES
+(
+'PK0796', 'T2449', 'T3542');
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO game(event_id, home_team_id, away_team_id)
+VALUES
+(
+'BT3882', 'T7853', 'T4788'
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO game(event_id, home_team_id, away_team_id)
+VALUES
+(
+'PK1234', 'T3542', 'T2449'
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO game(event_id, home_team_id, away_team_id)
+VALUES
+(
+'BD9876', 'T6874', 'T2853'
+);
+
+
+
+
+CREATE TABLE if not exists coach(
+team_id VARCHAR(100),
+name VARCHAR(100),
+foreign  key (team_id) references team (team_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO coach(team_id, name)
+VALUES
+(
+'T4105', 'Torre Varley'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO coach(team_id, name)
+VALUES
+(
+'T2853', 'Judith Espinha'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO coach(team_id, name)
+VALUES
+(
+'T2853', 'Sholom Seath'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO coach(team_id, name)
+VALUES
+(
+'T9607', 'Sergeant Grogan'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO coach(team_id, name)
+VALUES
+(
+'T2449', 'Goober Quaif'
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO coach(team_id, name)
+VALUES
+(
+'T3542', 'Andras Taylder'
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO coach(team_id, name)
+VALUES
+(
+'T3542', 'Cam Quarlis'
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO coach(team_id, name)
+VALUES
+(
+'T6874', 'Harmonie Grinin'
+);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO coach(team_id, name)
+VALUES
+(
+'T7353', 'Patrice MacElroy'
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO coach(team_id, name)
+VALUES
+(
+'T7853', 'Claudelle Ivanilov'
+);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO coach(team_id, name)
+VALUES
+(
+'T6359', 'Andy Anderson'
+);
+
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO coach(team_id, name)
+VALUES
+(
+'T4788', 'Rob Boucher'
+);
+
+
+
+
+CREATE TABLE if not exists parking(
+slot_number DOUBLE,
+lot_number VARCHAR(100),
+parking_name VARCHAR(100),
+price DECIMAL(10,2),
+primary key (slot_number, lot_number)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+1, 'A1', 'East', 10.00);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+2, 'A1', 'West', 10.00);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+3, 'A1', 'West', 10.00);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+4, 'A1', 'West', 10.00);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+5, 'A2', 'West', 15.00);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+1, 'A2', 'West', 15.00);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+2, 'A2', 'West', 15.00);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+3, 'A2', 'West', 15.00);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+4, 'B1', 'East', 10.00
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+5, 'B1', 'East', 10.00);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+1, 'B1', 'East', 10.00);
+
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+2, 'B1', 'East', 10.00);
+
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+3, 'B2', 'West', 15.00);
+
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+4, 'B2', 'West', 15.00);
+
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO parking(slot_number, lot_number, parking_name, price)
+VALUES
+(
+5, 'B2', 'West', 10.00);
+
+
+CREATE TABLE if not exists schedule(
+location_id VARCHAR(100),
+event_id VARCHAR(100),
+event_date date,
+start_time time,
+foreign key (location_id) references event_location(location_id),
+foreign key (event_id) references event(event_id),
+primary key (location_id, event_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'FFG0557', 'FP5553', Date('2023/11/21'), '19:07'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'MES3594', 'FP5553', Date('2023/3/14'), '19:46'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'CHJ0116', 'BD5694', Date('2023/2/3'), '17:19'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'MAC6643', 'BI3535',Date('2023/10/23'), '18:30'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'GZE8122', 'SN7277', Date('2023/5/28'), '18:21'
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'ALR6893', 'PK0796', Date('2023/3/11'), '18:41'
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'IUY0154', 'RQ6348', Date('2023/1/11'), '18:48'
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'FBL8450', 'LQ1929', Date('2023/7/24'), '19:32'
+);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'BQR3518', 'PK1234', Date('2023/3/14'), '17:44'
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'XZZ4063', 'BD9876', Date('2023/5/26'), '19:22'
+);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'UNK4781', 'BT3882', Date('2023/11/12'), '17:46'
+);
+
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'FFG0557', 'RQ6348', Date('2023/3/25'), '18:53'
+);
+
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'MES3594', 'WZ9924', Date('2023/12/6'), '17:30'
+);
+
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'BFT8701', 'LQ1929', Date('2023/2/4'), '18:25'
+);
+
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'FBL8450', 'WZ9924', Date('2022/12/18'), '17:12'
+);
+
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'BQR3518', 'RQ6348', Date('2023/12/28'), '17:39'
+);
+
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO schedule(location_id, event_id, event_date, start_time)
+VALUES
+(
+'IUY0154', 'MP4429', Date('2023/4/10'), '18:06'
+);
+
+
+
+
+
+
+CREATE TABLE if not exists parking_details(
+slot_number DOUBLE,
+lot_number VARCHAR(100),
+location_id VARCHAR(100),
+user_id VARCHAR(100),
+event_id VARCHAR(100),
+foreign key(slot_number,lot_number) REFERENCES parking(slot_number,lot_number),
+foreign key(location_id,event_id) REFERENCES schedule(location_id,event_id),
+foreign key(user_id) REFERENCES customer(user_id),
+primary key (slot_number, lot_number,location_id, event_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+1, 'A1', 'CHJ0116', 'CXN9692','BD5694'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+2, 'A1', 'MAC6643', 'QXP4856','BI3535'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+3, 'A1', 'IUY0154', 'GZL4416','MP4429'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+4, 'A1', 'GZE8122', 'QEK5997','SN7277'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+5, 'A2', 'ALR6893', 'CWT5625','PK0796'
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+1, 'A2', 'FBL8450', 'DSO2040','WZ9924'
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+2, 'A2', 'BQR3518', 'AHC8371','PK1234'
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+3, 'A2', 'XZZ4063', 'AFV8578','BD9876'
+);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+4, 'B1', 'UNK4781', 'KWC4378','BT3882'
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+5, 'B1', 'FFG0557', 'IXJ0828','FP5553'
+);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+1, 'B1', 'MES3594', 'HUL8501','WZ9924'
+);
+
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+2, 'B1', 'BFT8701', 'BIZ8809','LQ1929'
+);
+
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+3, 'B2', 'MAC6643', 'JUM5377','BI3535'
+);
+
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+4, 'B2', 'IUY0154', 'RPO6791','MP4429'
+);
+
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+5, 'B2', 'MAC6643', 'QXP4856','BI3535'
+);
+
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+2, 'A1', 'CHJ0116', 'CWE5753','BD5694'
+);
+
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+1, 'A2', 'FBL8450', 'DSO2040','LQ1929'
+);
+
+
+/* INSERT QUERY NO: 18 */
+INSERT INTO parking_details(slot_number, lot_number, location_id, user_id, event_id)
+VALUES
+(
+1, 'B1', 'MES3594', 'HUL8501','FP5553'
+);
+
+
+
+
+
+
+CREATE TABLE if not exists transaction_details(
+transaction_id VARCHAR(100),
+type VARCHAR(100),
+amount DECIMAL(10,2),
+payment_mode VARCHAR(100),
+user_id VARCHAR(100),
+foreign key (user_id) references customer (user_id),
+primary key (transaction_id)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'YEYO514968', 'Ticket', 120, 'Credit Card', 'CXN9692'
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'FOZP646144', 'Parking', 10, 'Debit Card', 'CXN9692'
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'FWPQ454549', 'Ticket', 130, 'Credit Card', 'QXP4856'
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'AJSZ805187', 'Parking', 10, 'Paypal', 'QXP4856'
+);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'ZEDT852169', 'Ticket', 130, 'Apple Pay', 'GZL4416'
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'GCOX860945', 'Ticket', 195, 'Debit Card', 'QEK5997'
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'JZHF887083', 'Ticket', 105, 'Credit Card', 'CWT5625'
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'OMUP598881', 'Parking', 10, 'Debit Card', 'GZL4416'
+);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'RK814060', 'Ticket', 80, 'Credit Card', 'DSO2040'
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'SCUB975260', 'Ticket', 65, 'Paypal', 'AHC8371'
+);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'UIEQ068063', 'Parking', 10, 'Apple Pay', 'QEK5997'
+);
+
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'GDWP443148', 'Ticket', 130, 'Debit Card', 'AFV8578'
+);
+
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'MIYU518223', 'Parking', 15, 'Credit Card', 'CWT5625'
+);
+
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'XJOH299643', 'Ticket', 65, 'Paypal', 'KWC4378'
+);
+
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'GQGG091212', 'Ticket', 105, 'Debit Card', 'IXJ0828'
+);
+
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'FMUP391277', 'Ticket', 75, 'Credit Card', 'HUL8501'
+);
+
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'HYYJ746067', 'Parking', 30, 'Paypal', 'DSO2040'
+);
+
+
+/* INSERT QUERY NO: 18 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'ADQR361974', 'Ticket', 120, 'Apple Pay', 'BIZ8809'
+);
+
+
+/* INSERT QUERY NO: 19 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'SISG559094', 'Ticket', 25, 'Apple Pay', 'JUM5377'
+);
+
+
+/* INSERT QUERY NO: 20 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'AKRV830123', 'Parking', 15, 'Debit Card', 'AHC8371'
+);
+
+
+/* INSERT QUERY NO: 21 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'WOYK146447', 'Ticket', 65, 'Credit Card', 'RPO6791'
+);
+
+
+/* INSERT QUERY NO: 22 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'WEOF695555', 'Parking', 15, 'Debit Card', 'AFV8578'
+);
+
+
+/* INSERT QUERY NO: 23 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'MONF517837', 'Ticket', 130, 'Credit Card', 'BXX9618'
+);
+
+
+/* INSERT QUERY NO: 24 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'CQOJ877238', 'Ticket', 75, 'Paypal', 'CWE5753'
+);
+
+
+/* INSERT QUERY NO: 25 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'CEZG776955', 'Ticket', 120, 'Apple Pay', 'FPZ4893'
+);
+
+
+/* INSERT QUERY NO: 26 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'GXCT353876', 'Parking', 10, 'Debit Card', 'KWC4378'
+);
+
+
+/* INSERT QUERY NO: 27 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'SRTM768327', 'Ticket', 75, 'Credit Card', 'JDM4520'
+);
+
+
+/* INSERT QUERY NO: 28 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'RQOA588134', 'Ticket', 65, 'Debit Card', 'APX4012'
+);
+
+
+/* INSERT QUERY NO: 29 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'PZSF677116', 'Parking', 10, 'Credit Card', 'IXJ0828'
+);
+
+
+/* INSERT QUERY NO: 30 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'CVPJ485937', 'Ticket', 130, 'Paypal', 'QCL2405'
+);
+
+
+/* INSERT QUERY NO: 31 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'KCWD136054', 'Parking', 20, 'Apple Pay', 'HUL8501'
+);
+
+
+/* INSERT QUERY NO: 32 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'ULQA866478', 'Ticket', 195, 'Debit Card', 'CWT5625'
+);
+
+
+/* INSERT QUERY NO: 33 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'VSMP577725', 'Ticket', 50, 'Credit Card', 'DSO2040'
+);
+
+
+/* INSERT QUERY NO: 34 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'YCZR355775', 'Ticket', 40, 'Paypal', 'AHC8371'
+);
+
+
+/* INSERT QUERY NO: 35 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'GJGO561159', 'Parking', 10, 'Debit Card', 'BIZ8809'
+);
+
+
+/* INSERT QUERY NO: 36 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'FIVQ686982', 'Ticket', 130, 'Credit Card', 'CWE5753'
+);
+
+
+/* INSERT QUERY NO: 37 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'JPHR259080', 'Ticket', 180, 'Debit Card', 'FPZ4893'
+);
+
+
+/* INSERT QUERY NO: 38 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'OPLH455195', 'Parking', 15, 'Credit Card', 'JUM5377'
+);
+
+
+/* INSERT QUERY NO: 39 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'BDKV094048', 'Ticket', 50, 'Paypal', 'JDM4520'
+);
+
+
+/* INSERT QUERY NO: 40 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'UDDT927720', 'Parking', 15, 'Apple Pay', 'RPO6791'
+);
+
+
+/* INSERT QUERY NO: 41 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'UYDT927770', 'Parking', 10, 'Apple Pay', 'QXP4856'
+);
+
+
+/* INSERT QUERY NO: 42 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'PBOT502325', 'Parking', 15, 'Credit Card', 'CWE5753'
+);
+
+
+/* INSERT QUERY NO: 43 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'KCWD401046', 'Ticket', 80, 'Apple Pay', 'HUL8501'
+);
+
+
+/* INSERT QUERY NO: 44 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'GJPW856115', 'Ticket', 50, 'Credit Card', 'DSO2040'
+);
+
+
+/* INSERT QUERY NO: 45 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'AKRV870480', 'Ticket', 155, 'Paypal', 'AHC8371'
+);
+
+
+/* INSERT QUERY NO: 46 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'RQOA401295', 'Ticket', 25, 'Debit Card', 'APX4012'
+);
+
+
+/* INSERT QUERY NO: 47 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'ABUO517837', 'Ticket', 25, 'Credit Card', 'BXX9618'
+);
+
+
+/* INSERT QUERY NO: 48 */
+INSERT INTO transaction_details(transaction_id, type, amount, payment_mode, user_id)
+VALUES
+(
+'BDKV058012', 'Ticket', 80, 'Paypal', 'JDM4520'
+);
+
+
+
+CREATE TABLE if not exists ticket(
+ticket_number VARCHAR(100),
+seat_number INT,
+zone VARCHAR(100),
+row_no INT,
+price DECIMAL(10,2),
+primary key(ticket_number)
+);
+
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO ticket(ticket_number, seat_number, zone, row_no, price)
+VALUES
+(
+'BENE5437', 1, 'Gold', 1,40
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO ticket(ticket_number, seat_number, zone, row_no, price)
+VALUES
+(
+'RELO0749', 2, 'Gold', 1,40
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO ticket(ticket_number, seat_number, zone, row_no, price)
+VALUES
+(
+'HCVW7927', 3, 'Gold', 1,40);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO ticket(ticket_number, seat_number, zone, row_no, price)
+VALUES
+(
+'UWAX8332', 4, 'Gold', 1,40);
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO ticket(ticket_number, seat_number, zone, row_no, price)
+VALUES
+(
+'VOOG3681', 5, 'Gold', 1,40);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO ticket(ticket_number, seat_number, zone, row_no, price)
+VALUES
+(
+'EMGM9070', 6, 'General', 2,25);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO ticket(ticket_number, seat_number, zone, row_no, price)
+VALUES
+(
+'PFFP5178', 7, 'General', 2,25);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO ticket(ticket_number, seat_number, zone, row_no, price)
+VALUES
+(
+'TSJT4727', 8, 'General', 2,25);
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO ticket(ticket_number, seat_number, zone, row_no, price)
+VALUES
+(
+'HLUL6232', 9, 'General', 2,25);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO ticket(ticket_number, seat_number, zone, row_no, price)
+VALUES
+(
+'KZRZ5438', 10, 'General', 2,25);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO ticket(ticket_number, seat_number, zone, row_no, price)
+VALUES
+(
+'CDIZ1040', 11, 'General', 2,25);
+
+
+
+
+CREATE TABLE if not exists booking_details(
+ticket_number VARCHAR(100),
+event_id VARCHAR(100),
+location_id VARCHAR(100),
+user_id VARCHAR(100),
+booking_date DATE,
+foreign key(ticket_number) references ticket(ticket_number),
+foreign key(location_id,event_id) REFERENCES schedule(location_id,event_id),
+foreign key(user_id) references customer(user_id),
+primary key(ticket_number,location_id,event_id)
+);
+        
+/* INSERT QUERY NO: 1 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'BENE5437', 'BD5694','CHJ0116', 'CXN9692', Date('2022/12/02')
+);
+
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'RELO0749', 'BD5694', 'CHJ0116', 'CXN9692', Date('2022/01/07')
+);
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HCVW7927', 'BD5694', 'CHJ0116', 'CXN9692', Date('2022/04/19')
+);
+
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'UWAX8332', 'BD5694',   'CHJ0116', 'BXX9618', Date('2022/08/02'));
+
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'VOOG3681', 'BD5694',   'CHJ0116', 'BXX9618', Date('2022/09/07')
+);
+
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'EMGM9070', 'BD5694',  'CHJ0116', 'BXX9618', Date('2022/10/08')
+);
+
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'PFFP5178', 'BD5694',  'CHJ0116', 'BXX9618', Date('2021/12/18')
+);
+
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'TSJT4727', 'BD5694',  'CHJ0116', 'CWE5753', Date('2022/06/07'));
+
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HLUL6232', 'BD5694',  'CHJ0116', 'CWE5753', Date('2022/02/22')
+);
+
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'KZRZ5438', 'BD5694',  'CHJ0116', 'CWE5753', Date('2022/04/18')
+);
+
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'BENE5437', 'BI3535',   'MAC6643', 'QXP4856', Date('2022/04/18')
+);
+
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'RELO0749', 'BI3535',   'MAC6643', 'QXP4856', Date('2022/02/17')
+);
+
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HCVW7927', 'BI3535',   'MAC6643', 'FPZ4893', Date('2022/02/17')
+);
+
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'UWAX8332', 'BI3535',   'MAC6643', 'FPZ4893', Date('2022/02/03')
+);
+
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'VOOG3681', 'BI3535',   'MAC6643', 'FPZ4893', Date('2022/02/03')
+);
+
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'EMGM9070', 'BI3535',  'MAC6643', 'QXP4856', Date('2021/12/26')
+);
+
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'PFFP5178', 'BI3535',  'MAC6643', 'QXP4856', Date('2021/12/26')
+);
+
+
+/* INSERT QUERY NO: 18 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'TSJT4727', 'BI3535',  'MAC6643', 'JDM4520', Date('2021/12/26')
+);
+
+
+/* INSERT QUERY NO: 19 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HLUL6232', 'BI3535',  'MAC6643', 'JDM4520', Date('2022/08/05'));
+
+
+/* INSERT QUERY NO: 20 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'KZRZ5438', 'BI3535',  'MAC6643', 'JDM4520', Date('2022/08/05')
+);
+
+
+/* INSERT QUERY NO: 21 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'BENE5437', 'SN7277',   'GZE8122', 'QEK5997', Date('2022/08/05')
+);
+
+
+/* INSERT QUERY NO: 22 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'RELO0749', 'SN7277',   'GZE8122', 'QEK5997', Date('2022/08/05')
+);
+
+
+/* INSERT QUERY NO: 23 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HCVW7927', 'SN7277',   'GZE8122', 'QEK5997', Date('2022/12/14')
+);
+
+
+/* INSERT QUERY NO: 24 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'UWAX8332', 'SN7277',   'GZE8122', 'APX4012', Date('2022/12/14')
+);
+
+
+/* INSERT QUERY NO: 25 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'EMGM9070', 'SN7277',  'GZE8122', 'QEK5997', Date('2022/10/17')
+);
+
+
+/* INSERT QUERY NO: 26 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'PFFP5178', 'SN7277',  'GZE8122', 'QEK5997', Date('2022/10/17')
+);
+
+
+/* INSERT QUERY NO: 27 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'TSJT4727', 'SN7277',  'GZE8122', 'QEK5997', Date('2022/01/11')
+);
+
+
+/* INSERT QUERY NO: 28 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HLUL6232', 'SN7277',  'GZE8122', 'APX4012', Date('2022/01/11')
+);
+
+
+/* INSERT QUERY NO: 29 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'BENE5437', 'PK0796',   'ALR6893', 'QCL2405', Date('2022/01/11')
+);
+
+
+/* INSERT QUERY NO: 30 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'RELO0749', 'PK0796',   'ALR6893', 'QCL2405',Date('2022/03/20')
+);
+
+
+/* INSERT QUERY NO: 31 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HCVW7927', 'PK0796',   'ALR6893', 'CWT5625', Date('2022/03/20')
+);
+
+
+/* INSERT QUERY NO: 32 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'UWAX8332', 'PK0796',   'ALR6893', 'CWT5625', Date('2022/02/15')
+);
+
+
+/* INSERT QUERY NO: 33 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'EMGM9070', 'PK0796',  'ALR6893', 'CWT5625', Date('2022/02/15')
+);
+
+
+/* INSERT QUERY NO: 34 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'PFFP5178', 'PK0796',  'ALR6893', 'QCL2405', Date('2022/11/27')
+);
+
+
+/* INSERT QUERY NO: 35 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'TSJT4727', 'PK0796',  'ALR6893', 'QCL2405', Date('2022/11/27')
+);
+
+
+/* INSERT QUERY NO: 36 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HLUL6232', 'PK0796',  'ALR6893', 'APX4012', Date('2022/11/27')
+);
+
+
+/* INSERT QUERY NO: 37 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'BENE5437', 'BT3882',   'UNK4781', 'CWT5625', Date('2022/11/27')
+);
+
+
+/* INSERT QUERY NO: 38 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'RELO0749', 'BT3882',   'UNK4781', 'CWT5625', Date('2022/06/05')
+);
+
+
+/* INSERT QUERY NO: 39 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HCVW7927', 'BT3882',   'UNK4781', 'CWT5625',Date('2022/06/05')
+);
+
+
+/* INSERT QUERY NO: 40 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'UWAX8332', 'BT3882',   'UNK4781', 'KWC4378', Date('2022/03/13')
+);
+
+
+/* INSERT QUERY NO: 41 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'EMGM9070', 'BT3882',  'UNK4781', 'KWC4378', Date('2022/03/13')
+);
+
+
+/* INSERT QUERY NO: 42 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'PFFP5178', 'BT3882',  'UNK4781', 'CWT5625', Date('2022/03/13')
+);
+
+
+/* INSERT QUERY NO: 43 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'TSJT4727', 'BT3882',  'UNK4781', 'CWT5625', Date('2022/05/26')
+);
+
+
+/* INSERT QUERY NO: 44 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HLUL6232', 'BT3882',  'UNK4781', 'CWT5625',Date('2022/05/26')
+);
+
+
+/* INSERT QUERY NO: 45 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'BENE5437', 'FP5553',   'FFG0557', 'IXJ0828', Date('2022/05/26')
+);
+
+
+/* INSERT QUERY NO: 46 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'RELO0749', 'FP5553',   'FFG0557', 'IXJ0828', Date('2022/07/31')
+);
+
+
+/* INSERT QUERY NO: 47 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HCVW7927', 'FP5553',   'FFG0557', 'DSO2040',Date('2022/07/31')
+);
+
+
+/* INSERT QUERY NO: 48 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'UWAX8332', 'FP5553',   'MES3594', 'DSO2040',Date('2022/07/31')
+);
+
+
+/* INSERT QUERY NO: 49 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'EMGM9070', 'FP5553',  'FFG0557', 'IXJ0828', Date('2022/01/31'));
+
+
+/* INSERT QUERY NO: 50 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'PFFP5178', 'FP5553',  'MES3594', 'HUL8501',Date('2022/01/31')
+);
+
+
+/* INSERT QUERY NO: 51 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'TSJT4727', 'FP5553',  'MES3594', 'HUL8501', Date('2022/01/31')
+);
+
+
+/* INSERT QUERY NO: 52 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HLUL6232', 'FP5553',  'MES3594', 'HUL8501', Date('2022/01/31')
+);
+
+
+
+
+/* INSERT QUERY NO: 61 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'BENE5437', 'MP4429',   'IUY0154', 'GZL4416',Date('2022/03/25')
+);
+
+
+/* INSERT QUERY NO: 62 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'RELO0749', 'MP4429',   'IUY0154', 'GZL4416', Date('2021/12/17')
+);
+
+
+/* INSERT QUERY NO: 63 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HCVW7927', 'MP4429',   'IUY0154', 'RPO6791', Date('2021/12/17')
+);
+
+
+/* INSERT QUERY NO: 64 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'UWAX8332', 'MP4429',   'IUY0154', 'AHC8371', Date('2022/06/08')
+);
+
+
+/* INSERT QUERY NO: 65 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'EMGM9070', 'MP4429',  'IUY0154', 'GZL4416', Date('2022/06/08')
+);
+
+
+/* INSERT QUERY NO: 66 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'PFFP5178', 'MP4429',  'IUY0154', 'GZL4416', Date('2022/06/08')
+);
+
+
+/* INSERT QUERY NO: 67 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'TSJT4727', 'MP4429',  'IUY0154', 'RPO6791', Date('2022/10/29')
+);
+
+
+/* INSERT QUERY NO: 68 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HLUL6232', 'MP4429',  'IUY0154', 'AHC8371', Date('2022/10/29')
+);
+
+
+/* INSERT QUERY NO: 69 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'BENE5437', 'WZ9924',   'MES3594', 'HUL8501', Date('2022/02/23')
+);
+
+
+/* INSERT QUERY NO: 70 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'RELO0749', 'WZ9924',   'MES3594', 'HUL8501', Date('2022/02/23')
+);
+
+
+/* INSERT QUERY NO: 71 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HCVW7927', 'WZ9924',   'FBL8450', 'CWE5753', Date('2022/02/23')
+);
+
+
+/* INSERT QUERY NO: 72 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'UWAX8332', 'WZ9924',   'FBL8450', 'CWE5753', Date('2022/02/23')
+);
+
+
+/* INSERT QUERY NO: 73 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'EMGM9070', 'WZ9924',  'MES3594', 'CWE5753',Date('2022/02/23')
+);
+
+
+/* INSERT QUERY NO: 74 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'PFFP5178', 'WZ9924',  'MES3594', 'CWE5753',Date('2022/07/20')
+);
+
+
+/* INSERT QUERY NO: 75 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'TSJT4727', 'WZ9924',  'FBL8450', 'DSO2040',Date('2022/07/20')
+);
+
+
+/* INSERT QUERY NO: 76 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HLUL6232', 'WZ9924',  'FBL8450', 'DSO2040', Date('2022/06/25')
+);
+
+
+/* INSERT QUERY NO: 77 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'BENE5437', 'LQ1929',   'BFT8701', 'BIZ8809', Date('2022/06/25')
+);
+
+
+/* INSERT QUERY NO: 78 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'RELO0749', 'LQ1929',   'BFT8701', 'AHC8371', Date('2022/09/01')
+);
+
+
+/* INSERT QUERY NO: 79 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HCVW7927', 'LQ1929',   'BFT8701', 'BIZ8809',Date('2022/09/01')
+);
+
+
+/* INSERT QUERY NO: 80 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'UWAX8332', 'LQ1929',   'BFT8701', 'BIZ8809', Date('2022/09/01')
+);
+
+
+/* INSERT QUERY NO: 81 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'EMGM9070', 'LQ1929',  'FBL8450', 'DSO2040',Date('2022/03/08')
+);
+
+
+/* INSERT QUERY NO: 82 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'PFFP5178', 'LQ1929',  'FBL8450', 'DSO2040', Date('2022/03/08')
+);
+
+
+/* INSERT QUERY NO: 83 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'TSJT4727', 'LQ1929',  'FBL8450', 'JDM4520', Date('2022/03/08')
+);
+
+
+/* INSERT QUERY NO: 84 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HLUL6232', 'LQ1929',  'FBL8450', 'JDM4520', Date('2022/01/18')
+);
+
+
+/* INSERT QUERY NO: 85 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'BENE5437', 'PK1234',   'BQR3518', 'AHC8371', Date('2022/01/18')
+);
+
+
+/* INSERT QUERY NO: 86 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'RELO0749', 'PK1234',   'BQR3518', 'AHC8371', Date('2022/01/18')
+);
+
+
+/* INSERT QUERY NO: 87 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HCVW7927', 'PK1234',   'BQR3518', 'JDM4520', Date('2022/08/08')
+);
+
+
+/* INSERT QUERY NO: 88 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'UWAX8332', 'PK1234',   'BQR3518', 'JDM4520', Date('2022/08/08')
+);
+
+
+/* INSERT QUERY NO: 89 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'EMGM9070', 'PK1234',  'BQR3518', 'AHC8371', Date('2022/06/08')
+);
+
+
+/* INSERT QUERY NO: 90 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'PFFP5178', 'PK1234',  'BQR3518', 'AHC8371',Date('2022/06/08')
+);
+
+
+/* INSERT QUERY NO: 91 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'TSJT4727', 'PK1234',  'BQR3518', 'AHC8371', Date('2022/04/11')
+);
+
+
+/* INSERT QUERY NO: 92 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HLUL6232', 'PK1234',  'BQR3518', 'BXX9618',Date('2022/04/11')
+);
+
+
+/* INSERT QUERY NO: 93 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'BENE5437', 'BD9876',   'XZZ4063', 'AFV8578', Date('2022/02/19')
+);
+
+
+/* INSERT QUERY NO: 94 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'RELO0749', 'BD9876',   'XZZ4063', 'AFV8578', Date('2022/02/19')
+);
+
+
+/* INSERT QUERY NO: 95 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HCVW7927', 'BD9876',   'XZZ4063', 'FPZ4893', Date('2022/02/19')
+);
+
+
+/* INSERT QUERY NO: 96 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'UWAX8332', 'BD9876',  'XZZ4063', 'FPZ4893', Date('2022/07/21')
+);
+
+
+/* INSERT QUERY NO: 97 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'EMGM9070', 'BD9876', 'XZZ4063', 'AFV8578', Date('2022/07/21')
+);
+
+
+/* INSERT QUERY NO: 98 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'PFFP5178', 'BD9876', 'XZZ4063', 'AFV8578', Date('2022/08/26')
+);
+
+
+/* INSERT QUERY NO: 99 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'TSJT4727', 'BD9876', 'XZZ4063', 'FPZ4893', Date('2022/08/26')
+);
+
+
+/* INSERT QUERY NO: 100 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'HLUL6232', 'BD9876','XZZ4063', 'FPZ4893', Date('2022/07/25')
+);
+
+
+/* INSERT QUERY NO: 101 */
+INSERT INTO booking_details(ticket_number, event_id, location_id, user_id, booking_date)
+VALUES
+(
+'CDIZ1040', 'BI3535',  'MAC6643', 'JUM5377', Date('2022/07/25')
+);

@@ -1,0 +1,58 @@
+-- Display the event name, event id, user id, first name, and last name of the user who has booked the maximum number of tickets.
+
+select distinct bd.event_id, max_user.user_id, c.first_name, c.last_name, e.name from (select user_id, max(ct) as max 
+from (select user_id, count(*) as ct
+from booking_details 
+group by user_id
+order by ct desc) tmp) max_user  
+join customer c 
+on max_user.user_id = c.user_id
+join booking_details bd
+on max_user.user_id = bd.user_id
+join event e
+on bd.event_id = e.event_id;
+
+-- Display the top 3 organizers in terms of a) no of events organized > 1, b) the maximum number of tickets sold for an event 
+
+select count(*) tickets_sold,w.first_name,w.last_name 
+from (select cte.organizer_id, cte.first_name, cte.last_name, cte.event_id, e.name,bd.user_id
+from (select * from (select tmp.organizer_id,o.first_name,o.last_name, ed.event_id 
+from (select organizer_id, count(*) ct
+from event_details
+where is_canceled = 0
+group by organizer_id
+having ct > 1) tmp
+join organizer o
+on o.organizer_id = tmp.organizer_id
+right join event_details ed
+on ed.organizer_id = tmp.organizer_id) c
+where c.organizer_id is not null) cte
+join event e
+on cte.event_id = e.event_id
+join booking_details bd
+on bd.event_id = cte.event_id) w
+group by w.first_name,w.last_name
+order by tickets_sold desc
+limit 3;
+
+-- Display the concert Genre/type and the total sale (sum of the price of tickets sold) in descending order
+select tmp.type, sum(t.price) sp 
+from (select c.type,bd.ticket_number 
+from concert c 
+inner join booking_details bd
+on c.event_id = bd.event_id) tmp
+join ticket t
+on tmp.ticket_number = t.ticket_number
+group by tmp.type
+order by sp desc;
+
+-- Display the event name, event id, and total number of parking spots booked 
+with cte as(select event_id , count(*)  ct
+from parking_details 
+group by event_id
+having ct > 1)
+select cte.event_id, e.name, cte.ct as spots_booked
+from cte
+join event e
+on cte.event_id = e.event_id
+order by spots_booked desc;
